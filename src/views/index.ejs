@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <title>Groceries</title>
     <style>
         body {
@@ -56,6 +58,89 @@
             margin: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  position: relative;
+  margin: 20px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+.info-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-btn:hover {
+  background-color: #45a049;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ... (resto de los estilos) */
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  background-color: #fefefe;
+  border-radius: 8px;
+}
+
+#modalImage {
+  max-width: 100%; /* La imagen se ajustará al ancho máximo de la modal */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+
+/* ... (resto de los estilos) */
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
 
     </style>
 </head>
@@ -108,8 +193,47 @@
                 <p>Aqui podra encontrar cualquier producto que quiera</p>
             </div>
 
+            <div class="content-images">
+                <div class="image-container">
+                    <img src="https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00762221083366L.jpg" alt="">
+                    <button class="info-btn">Ver Info</button>
+                </div>
+            </div>
+            
+            <div class="modal" id="imageModal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <img src="" alt="" id="modalImage">
+                    <p>Galletas Oreo saber leche y chocolate</p>
+                </div>
+            </div>
+
         </div>
+        <script>
+            $(document).ready(function() {
+  // Mostrar modal al hacer clic en el botón
+  $(".info-btn").on("click", function() {
+    $("#imageModal").css("display", "block");
     
+    // Obtener la imagen actual y mostrarla en la modal
+    var imgSrc = $(this).siblings("img").attr("src");
+    $("#modalImage").attr("src", imgSrc);
+  });
+
+  // Cerrar modal al hacer clic en la 'x' de la modal
+  $(".close-btn").on("click", function() {
+    $("#imageModal").css("display", "none");
+  });
+
+  // Cerrar modal al hacer clic fuera de la modal
+  $(window).on("click", function(event) {
+    if (event.target == $("#imageModal")[0]) {
+      $("#imageModal").css("display", "none");
+    }
+  });
+});
+
+        </script>
     </div>
     
 
