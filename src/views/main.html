@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi Aplicación jQuery Mobile</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Página principal -->
+<div data-role="page" id="pagina-principal">
+    <div data-role="header" style="background-color:green; color:white;">
+        <h1>Groceries</h1>
+    </div>
+
+    <div data-role="content">
+        <div class="ui-grid-a">
+            <!-- Producto 1 -->
+            <div class="ui-block-a">
+              <div class="ui-bar">
+                <h3>Producto 1</h3><br>
+                <img src="https://thefoodtech.com/wp-content/uploads/2020/05/carne-de-res.jpg" style="width:60%;" alt="Producto 1">
+                <p>Descripción del producto 1.</p>
+                <p>Precio: $19.99</p>
+                <a href="#" class="ui-btn ui-btn-b ui-corner-all">Agregar</a>
+              </div>
+            </div>
+    
+            <!-- Producto 2 -->
+            <div class="ui-block-b">
+              <div class="ui-bar">
+                <h3>Producto 2</h3><br>
+                <img src="https://imgmedia.buenazo.pe/650x358/buenazo/original/2020/09/24/5f6d16de332f3648fb38e85a.jpg" style="width:60%;"alt="Producto 2">
+                <p>Descripción del producto 2.</p>
+                <p>Precio: $29.99</p>
+                <a href="#" class="ui-btn ui-btn-b ui-corner-all">Agregar</a>
+              </div>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <!-- Producto 1 -->
+            <div class="ui-block-a">
+              <div class="ui-bar">
+                <h3>Producto 3</h3><br>
+                <img src="https://www.cityclub.com.mx/dw/image/v2/BGBD_PRD/on/demandware.static/-/Sites-soriana-grocery-master-catalog/default/dw0142d77b/images/product/7501020515398_A.jpg?sw=1000&sh=1000&sm=fit" style="width:60%;" alt="Producto 1">
+                <p>Descripción del producto 1.</p>
+                <p>Precio: $19.99</p>
+                <a href="#" class="ui-btn ui-btn-b ui-corner-all">Agregar</a>
+              </div>
+            </div>
+    
+            <!-- Producto 2 -->
+            <div class="ui-block-b">
+              <div class="ui-bar">
+                <h3>Producto 4</h3><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Wei%C3%9Fbrot-1.jpg/250px-Wei%C3%9Fbrot-1.jpg" style="width:60%;"alt="Producto 2">
+                <p>Descripción del producto 2.</p>
+                <p>Precio: $29.99</p>
+                <a href="#" class="ui-btn ui-btn-b ui-corner-all">Agregar</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#pagina-segunda" data-transition="slide">Página 2</a></li>
+            <li><a href="#pagina-tercera" data-transition="slide">Página 3</a></li>
+        </ul>
+    </div>
+
+    <div data-role="footer">
+        <h4>Hcompany &copy; 2024</h4>
+    </div>
+</div>
+
+<!-- Página segunda -->
+<div data-role="page" id="pagina-segunda">
+    <div data-role="header">
+        <h1>Página 2</h1>
+        <a href="#pagina-principal" data-icon="home" class="ui-btn-left" data-transition="slide">Inicio</a>
+    </div>
+
+    <div data-role="content">
+        <!-- Contenido de la página segunda -->
+        <p>Contenido de la página 2 va aquí.</p>
+    </div>
+
+    <div data-role="footer">
+        <h4>Hcompany &copy; 2024</h4>
+    </div>
+</div>
+
+<!-- Página tercera -->
+<div data-role="page" id="pagina-tercera">
+    <div data-role="header">
+        <h1>Página 3</h1>
+        <a href="#pagina-principal" data-icon="home" class="ui-btn-left" data-transition="slide">Inicio</a>
+    </div>
+
+    <div data-role="content">
+        <!-- Contenido de la página tercera -->
+        <p>Contenido de la página 3 va aquí.</p>
+    </div>
+
+    <div data-role="footer">
+        <h4>Hcompany &copy; 2024</h4>
+    </div>
+</div>
+
+</body>
+</html>
